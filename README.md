@@ -39,11 +39,11 @@ function t(str, marks) {
 }
 
 const setup = [
-	new BiHrcl(0, [[t('A')]], [], 1),
-	new BiHrcl(0, [[t('B')]], [], 1),
-	new BiHrcl(1, [[t('x')]], [], 1),
-	new BiHrcl(1, [[t('y')]], [], 1),
-	new BiHrcl(0, [[t('C')]], [], 1)
+	new BiHrcl(0, [[t('A')]], []),
+	new BiHrcl(0, [[t('B')]], []),
+	new BiHrcl(1, [[t('x')]], []),
+	new BiHrcl(1, [[t('y')]], []),
+	new BiHrcl(0, [[t('C')]], [])
 ]
 
 ```
@@ -68,11 +68,11 @@ The ~ represents an empty line.
 
 ```javascript
 const setup = [
-	new BiHrcl(0, [[t('A')]], [], 1),
-	new BiHrcl(0, [[t('B1')], [t('B2')]], [[t('b'), br()]], 7),
-	new BiHrcl(1, [[t('X')]], [[t('x')]], 3),
-	new BiHrcl(1, [[t('Y')]], [[t('y1')],[t('y2')]], 5),
-	new BiHrcl(0, [[t('C')]], [], 1)
+	new BiHrcl(0, [[t('A')]], []),
+	new BiHrcl(0, [[t('B1')], [t('B2')]], [[t('b'), br()]]),
+	new BiHrcl(1, [[t('X')]], [[t('x')]]),
+	new BiHrcl(1, [[t('Y')]], [[t('y1')],[t('y2')]]),
+	new BiHrcl(0, [[t('C')]], [])
 ]
 ```
 

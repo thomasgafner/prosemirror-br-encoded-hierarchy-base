@@ -34,9 +34,9 @@ const compAttrsArray = function(as, bs) {
 
 // ::- Hierarchical info of elements with two parts.
 export class BiHrcl {
-  // :: (int, [[Node]], [[Node]], int, int)
+  // :: (int, [[Node]], [[Node]])
   // Create a hierarchical info.
-  constructor(depth, leading, trailing, nofNodes, trailingBreaks = 0) {
+  constructor(depth, leading, trailing) {
 		// :: int
 	  // Number of the level
     this.depth = depth
@@ -44,13 +44,6 @@ export class BiHrcl {
 		this.trailing = trailing
 		this.setLeadingAttrs(Object.create(null))
 		this.setTrailingAttrs(Object.create(null))
-		// :: int
-	  // Original number of nodes including the omitted ones for raising and lowering
-		// level(s) and the one or two for separating leading and trailing part
-		this.nofNodes = nofNodes
-		// :: int
-	  // Number of trailing breaks omitted for lowering level(s)
-		this.trailingBreaks = trailingBreaks
   }
 
 	// :: (Object)
@@ -75,8 +68,6 @@ export class BiHrcl {
 		if (this.depth != othr.depth) return false
 		if (!!this.leading != !!othr.leading) return false
 		if (!!this.trailing != !!othr.trailing) return false
-		if (this.nofNodes != othr.nofNodes) return false
-		if (this.trailingBreaks != othr.trailingBreaks) return false
 		if (this.leading) {
 			const res = compNodes(this.leading, othr.leading)
 			if (!res) return false
